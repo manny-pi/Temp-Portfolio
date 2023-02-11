@@ -1,0 +1,63 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, sans-serif;
+    color: #414141;
+}
+
+header {
+    margin: 10px;
+    padding: 10px;
+    font-size: 2.25em;
+    font-weight: bold;
+}
+
+body { 
+    margin: 0px;
+    font-family: Helvetica; 
+    color: #414141; 
+}
+
+.navigation-bar {
+    background-color: #073b4c;
+    border-width: 0px;
+    margin: 0px;
+    display: block;
+    padding: 50px;
+}
+
+.main-wrapper {
+
+}
+
+.skills-section-container {
+    margin: 10px;
+    padding: 10px;
+}
+
+.skills-section-wrapper {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills-section {
+    border-radius: 30px;
+    padding: 30px;
+    margin: 5px;
+}
+
+.intelligent-agents-section { 
+    background-color: #f61067;
+}
+
+.software-development-section {
+    background-color: #118ab2;
+}
+
+.data-science-section {
+    background-color: #06d6a0;
+}
+
+.machine-learning-research-section {
+    background-color: #ffd166;
+}
+
