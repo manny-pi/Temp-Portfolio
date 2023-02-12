@@ -89,17 +89,21 @@ body {
 
 .intelligent-agents-section { 
     background-color: #f61067;
+    border: 5px solid white;
 }
 
 .software-development-section {
     background-color: #118ab2;
+    border: 5px solid white;
 }
 
 .data-science-section {
     background-color: #06d6a0;
+    border: 5px solid white;
 }
 
 .machine-learning-research-section {
     background-color: #ffd166;
+    border: 5px solid white;
 }
 
