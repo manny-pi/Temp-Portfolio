@@ -20,7 +20,7 @@ function main() {
 
         item.addEventListener('click', () => {
             console.log(`Go to ${item.dataset.url}`); 
-            window.open(`${item.dataset.url}`);
+            window.open(`${item.dataset.url}`, '_self');
         }); 
     });
 }
