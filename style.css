@@ -26,14 +26,15 @@ body {
 
 .nav-bar-container {
     background-color: #073b4c;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     border-width: 0px;
     margin: 0px;
     padding: 25px;
     padding-left: 0px;
 }
 
-.nav-bar-items-container {
+.nav-bar-left-container {
     display: flex;
 }
 
