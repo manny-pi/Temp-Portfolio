@@ -1,6 +1,6 @@
 # Config and System Files
 .DS_Store
-.prettierc 
+.prettierrc
 
 # npm package files
 package-lock.json
