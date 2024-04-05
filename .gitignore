@@ -1,7 +1,11 @@
+# Config and System Files
 .DS_Store
+.prettierc 
 
+# npm package files
 package-lock.json
 package.json
 node_modules/
 
+# Internal-use only folders
 snippets/
