@@ -30,6 +30,7 @@ body {
 }
 
 main {
+	padding: 25px;
 }
 
 .nav-bar-container {
@@ -59,54 +60,6 @@ main {
 	font-weight: 900;
 }
 
-.nav-bar-button > a:link,
-.nav-bar-button > a:visited {
-	color: white;
-}
-
 .nav-bar-button > a:hover {
 	color: grey;
-}
-
-.nav-bar-home-button {
-}
-
-.nav-bar-contact-button {
-}
-
-.skills-section-container {
-	margin: 10px;
-	padding: 10px;
-}
-
-.skills-section-wrapper {
-	margin: 10px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.skills-section {
-	border-radius: 30px;
-	padding: 30px;
-	margin: 5px;
-}
-
-.intelligent-agents-section {
-	background-color: #f61067;
-	border: 5px solid white;
-}
-
-.software-development-section {
-	background-color: #118ab2;
-	border: 5px solid white;
-}
-
-.data-science-section {
-	background-color: #06d6a0;
-	border: 5px solid white;
-}
-
-.machine-learning-research-section {
-	background-color: #ffd166;
-	border: 5px solid white;
 }
