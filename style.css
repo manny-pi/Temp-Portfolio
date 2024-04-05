@@ -29,7 +29,7 @@ body {
 	color: #414141;
 }
 
-main {
+.page-wrapper {
 	padding: 25px;
 }
 
@@ -65,4 +65,29 @@ main {
 
 .nav-bar-button > a:hover {
 	color: grey;
+}
+
+.table-of-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.main-wrapper {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas: "main toc";
+	padding: 25px;
+}
+
+main {
+	grid-area: main;
+}
+
+.toc-container {
+	grid-area: toc;
+}
+
+.blog-post-section {
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
