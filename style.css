@@ -1,109 +1,112 @@
-h1, h2, h3, h4, h5, h6 {
-    font-family: Helvetica, sans-serif;
-    color: #414141;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Helvetica, sans-serif;
+	color: #414141;
 }
 
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-    margin: 10px;
-    padding: 10px;
+	margin: 10px;
+	padding: 10px;
 
-    padding-left: 0px; 
-    margin-left: 25px;
-    
-    font-size: 2.25em;
-    font-weight: bold;
+	padding-left: 0px;
+	margin-left: 25px;
+
+	font-size: 2.25em;
+	font-weight: bold;
 }
 
-body { 
-    margin: 0px;
-    font-family: Helvetica; 
-    color: #414141; 
+body {
+	margin: 0px;
+	font-family: Helvetica;
+	color: #414141;
 }
 
 main {
-
 }
 
 .nav-bar-container {
-    background-color: #073b4c;
-    display: flex;
-    justify-content: space-between;
-    border-width: 0px;
-    margin: 0px;
-    padding: 25px;
-    padding-left: 0px;
+	background-color: #073b4c;
+	display: flex;
+	justify-content: space-between;
+	border-width: 0px;
+	margin: 0px;
+	padding: 25px;
+	padding-left: 0px;
 }
 
 .nav-bar-buttons-contains {
-    display: flex;
+	display: flex;
 }
 
 .nav-bar-button > * {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .nav-bar-button {
-    padding: 0px; 
-    margin-left: 25px; 
-    margin-right: 25px; 
-    color: white; 
-    font-size: 20px;
-    font-weight: 900; 
+	padding: 0px;
+	margin-left: 25px;
+	margin-right: 25px;
+	color: white;
+	font-size: 20px;
+	font-weight: 900;
 }
 
-.nav-bar-button > a:link, .nav-bar-button > a:visited {
-    color: white;
+.nav-bar-button > a:link,
+.nav-bar-button > a:visited {
+	color: white;
 }
 
 .nav-bar-button > a:hover {
-    color: grey;
+	color: grey;
 }
 
-.nav-bar-home-button  { 
-
+.nav-bar-home-button {
 }
 
 .nav-bar-contact-button {
-
 }
 
 .skills-section-container {
-    margin: 10px;
-    padding: 10px;
+	margin: 10px;
+	padding: 10px;
 }
 
 .skills-section-wrapper {
-    margin: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+	margin: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .skills-section {
-    border-radius: 30px;
-    padding: 30px;
-    margin: 5px;
+	border-radius: 30px;
+	padding: 30px;
+	margin: 5px;
 }
 
-.intelligent-agents-section { 
-    background-color: #f61067;
-    border: 5px solid white;
+.intelligent-agents-section {
+	background-color: #f61067;
+	border: 5px solid white;
 }
 
 .software-development-section {
-    background-color: #118ab2;
-    border: 5px solid white;
+	background-color: #118ab2;
+	border: 5px solid white;
 }
 
 .data-science-section {
-    background-color: #06d6a0;
-    border: 5px solid white;
+	background-color: #06d6a0;
+	border: 5px solid white;
 }
 
 .machine-learning-research-section {
-    background-color: #ffd166;
-    border: 5px solid white;
+	background-color: #ffd166;
+	border: 5px solid white;
 }

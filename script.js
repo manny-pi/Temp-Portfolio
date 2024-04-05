@@ -1,27 +1,27 @@
-
 function main() {
-    // Get all the children in the skills section
-    const skills_section = document.querySelector('.skills-section-wrapper').childNodes; 
+	// Get all the children in the skills section
+	const skills_section = document.querySelector(
+		".skills-section-wrapper",
+	).childNodes;
 
-    // 
-    skills_section.forEach((item) => {
-        
-        // Execute when the user's pointer is over the software-development-section
-        item.addEventListener('pointerover', () => {
-            // Change the color of the div's border to white
-            item.style.borderColor = 'black';
-        });
-        
-        // Execute when the user's pointer leaves the software-development-section
-        item.addEventListener('pointerout', () => {
-            // Change the color of the div's border to white
-            item.style.borderColor = 'white';
-        });
+	//
+	skills_section.forEach((item) => {
+		// Execute when the user's pointer is over the software-development-section
+		item.addEventListener("pointerover", () => {
+			// Change the color of the div's border to white
+			item.style.borderColor = "black";
+		});
 
-        item.addEventListener('click', () => {
-            console.log(`Go to ${item.dataset.url}`); 
-            window.open(`${item.dataset.url}`, '_self');
-        }); 
-    });
+		// Execute when the user's pointer leaves the software-development-section
+		item.addEventListener("pointerout", () => {
+			// Change the color of the div's border to white
+			item.style.borderColor = "white";
+		});
+
+		item.addEventListener("click", () => {
+			console.log(`Go to ${item.dataset.url}`);
+			window.open(`${item.dataset.url}`, "_self");
+		});
+	});
 }
-document.addEventListener('DOMContentLoaded', () => main())
+document.addEventListener("DOMContentLoaded", () => main());
