@@ -24,6 +24,10 @@ body {
     color: #414141; 
 }
 
+main {
+
+}
+
 .nav-bar-container {
     background-color: #073b4c;
     display: flex;
@@ -34,7 +38,7 @@ body {
     padding-left: 0px;
 }
 
-.nav-bar-left-container {
+.nav-bar-buttons-contains {
     display: flex;
 }
 
@@ -64,10 +68,6 @@ body {
 }
 
 .nav-bar-contact-button {
-
-}
-
-.main-wrapper {
 
 }
 
