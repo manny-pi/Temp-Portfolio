@@ -91,3 +91,19 @@ main {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
+
+/* Styling for project and blog posts */
+.post-card {
+}
+
+a[class="post-card"] {
+	text-decoration: none;
+}
+
+a[class="post-card"]:visited {
+	text-decoration: none;
+}
+
+a[class="post-card"]:hover {
+	color: red;
+}
