@@ -1,39 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<style>
-			a[id="mail"] {
-				text-decoration: none;
-			}
-
-			a[id="mail"]:hover {
-				text-decoration: none;
-				color: red;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="icon" href="favicon.png" />
+		<title>Hi! I'm Prince</title>
 	</head>
 	<body>
 		<div class="page-wrapper">
+			<nav class="nav-bar-container">
+				<div class="nav-bar-buttons-contains">
+					<div class="nav-bar-button nav-bar-home-button">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="nav-bar-button">
+						<a href="projects/projects.html">Projects</a>
+					</div>
+					<div class="nav-bar-button">
+						<a href="blog/blog.html">Blog</a>
+					</div>
+				</div>
+				<div class="nav-bar-buttons-contains">
+					<div class="nav-bar-button nav-bar-contact-button">
+						<a href="about.html">About</a>
+					</div>
+				</div>
+			</nav>
 			<div class="main-wrapper">
+				<div class="toc-container">
+					<aside class="table-of-content">
+						<a href="#about-me">About Me</a>
+						<a href="#my-interests">My Interests</a>
+						<a href="#projects">My Projects</a>
+						<a href="#portfolio">My Portfolio</a>
+					</aside>
+				</div>
 				<main>
+					<div>
+						<img src="profile-picture.png" alt="linkedin-profile-picture.png" />
+					</div>
+					<h1>Hi, I'm Prince!</h1>
+					<p>And it's a pleasure to meet you - figuratively speaking of course.</p>
 					<p>
-						<a href="./index.html">Home</a>
+						This is my first blog post, so I'm going to give a brief description of my
+						background, and tell you about the topics I'm interested in.
 					</p>
-					<p>
-						Email: 
-						<a id="mail" href="mailto:p.okpoziakpo@gmail.com">
-							p dot okpoziakpo at gmail dot com
-						</a>
-					</p>
-					<p>
-						LinkedIn:
-						<a href="https://www.linkedin.com/in/prince-okpoziakpo">
-							prince okpoziakpo
-						</a>
-					</p>
+					<section class="blog-post-section">
+						<h2>About Me</h2>
+						<p>
+							I'm an <b>Information Scientist</b> from the University of Maryland,
+							College Park (grad. 2023).
+						</p>
+					</section>
+					<section class="blog-post-section">
+						<h2>My Interests</h2>
+						<p>
+							Learning is my greatest attribute. I love gathering information and
+							putting it to <em>practical</em> use. I have a wide range of interests,
+							and I've listed some below. I've also included links to projects that I'm
+							particularly proud of.
+						</p>
+						<p>Let's dive in!</p>
+						<section>
+							<h3>Artificial Intelligence</h3>
+							<p></p>
+						</section>
+					</section>
 				</main>
 			</div>
 		</div>
