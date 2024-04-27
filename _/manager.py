@@ -1,85 +1,59 @@
 #! /usr/local/bin/python3.8
-
-"""This module provides functions for managing links on my website. 
-
-Motivation:
-= = = = = = = = = = = = 
-I'm in the early stages of writing my blog in pure HTML and CSS. So, naturally, I'm
-constantly restructuring the filesystem, and constantly renaming pages and assets. As
-a result, I have to manually update links and references to assets. This process gets
-tedious, and is becoming very time consuming - even though I've only written a few pages!
-
-To eliminate this unnecessary labor, I've decided to automate the process of resolving
-links and references to pages and assets. The next section describes this problem in context, and
-also details my solution to the problem.
-
-
-How the manager.py works:
-= = = = = = = = = = = = 
-manager.py does the following:
-    1. Scans the directory, and searches for links that refer to missing or non-existent referrants
-    2. Reports the results of the search, and creates a "database" of links and their associated referrents
-
-1. Scanning 
-- - - - - - - - - -
-
-2. Reporting
-- - - - - - - - - -
-
-
-Glossary
-= = = = = = = = = = = = 
-* Referrant: A page, a stylesheet, or an asset that, presumably, exists in the repository.
-* Page: An HTML file; (as a parameter, a filename or path)
-"""
-
-import os, os.path
+import os
+import os.path
 import pathlib
 import sys
-
 from pprint import pprint
-
 from bs4 import BeautifulSoup
 
-
-def traverse_dir(dir: str, depth: int = 1):
-    """Traverses the contents of the directory `dir`, and returns the names of structures 
-    in a list.
+def get_paths(dir: str, depth: int = 1, exclude=[".git", ".gitignore", "node_modules"]):
+    """Traverses the contents of the directory `dir`, and returns the paths of each file system 
+    object relative to `dir`. 
 
     Positional args:
         - dir <str>: The directory to traverse. If `dir` doesn't exist in working directory, 
             the programs raises a `FileExistsError`.
-        - depth <int>: The depth of the traversal
+        - depth <int>: The depth of the traversal.
+        - exclude <list>: A list of files and directories to exclude from the returned list. By
+        default, ignores `.git/`, `.gitignore`, and `node_modules/`.
 
     Returns a list of files and directories.
 
-    TODO: Add argument for filtering for specific filetype.
+    FIXME: Update the name of the function to `get_paths` so it reflects its actual functionality
+    TODO: Update `exclude` parameter so that the list items can be regex (or globs?).
+    TODO: Add `excludedefault` to optinally exclude the files that are excluded by default (mouthful, lol)
     """
 
     if not os.path.exists(dir):
         raise FileExistsError("'%s does not exist" % dir)
 
-    # If we're reached the depth limit of the traversal, return; don't do any more traversal
+    # If we've reached the depth limit of the traversal, return; don't traverse anymore
     if depth == 0:
         return []
 
     dir = pathlib.Path(dir)
-    filenames = []  # TODO: Should this be named `filenames` or `paths` instead?
+    paths = []  # TODO: Should this be named `filenames` or `paths` instead?
     for file in dir.iterdir():
+        # Ignore that paths listed in `exclude`.
+        if file.name in exclude:
+            continue
+        
         if file.is_file():
-            filenames.append(file.name)
+            paths.append(file.name)
         else:
-            offset = len(filenames)
-            subdir_filenames = traverse_dir(file, depth - 1)
-            if len(subdir_filenames) > 0:  # the subdirectory is empty or we reached the depth limit
-                for sub_index in range(0, len(subdir_filenames)):
-                    subdir_filenames[sub_index] = file.name + \
-                        '/' + subdir_filenames[sub_index]
-                filenames += subdir_filenames
-            else:
-                filenames += [file.name + '/']
+            subdir_paths = get_paths(file, depth - 1)
+            # If the subdirectory is empty or we reached the depth limit
+            if len(subdir_paths) == 0:
+                paths += [file.name + '/']
 
-    return filenames
+            # Concatenate the directory path to the returned list of subdirectories
+            else:
+                for sub_index in range(0, len(subdir_paths)):
+                    subdir_paths[sub_index] = file.name + \
+                        '/' + subdir_paths[sub_index]
+                paths += subdir_paths
+
+    return paths
 
 
 def get_links(page: str):
@@ -114,13 +88,13 @@ def get_broken_links(page: str):
 
     os.scandir()
 
-
     links = get_links(page)
     broken_links = []
     for link in links:
         # FIXME (1)
         # if not os.path.exists(link):
         #     broken_links += [link]
+        ...
 
     return broken_links
 
@@ -133,7 +107,7 @@ if __name__ == "__main__":
         depth = int(sys.argv[1])
 
     # Get the HTML files
-    files = traverse_dir(root, depth=depth)
+    files = get_paths(root, depth=depth)
 
     # Iterate over the HTML, and get the broken links
     html_files = list(filter(lambda filename: ".html" in filename, files))
