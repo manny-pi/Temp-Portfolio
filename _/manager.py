@@ -7,6 +7,11 @@ import sys
 from pprint import pprint
 from bs4 import BeautifulSoup
 
+"""
+TODO: 
+    Inconsistent semantics. Some implementations use os.path.Path objects, others use regular strings to 
+    represent paths and files. Update this so that terminology is consistent. 
+"""
 
 def get_paths(dir: str, depth: int = 1, exclude=[".git", ".gitignore", "node_modules"]):
     """Traverses the directory `dir`, and returns a list of paths relative to `dir`. 
@@ -92,9 +97,9 @@ def get_broken_links(path: str):
         #       ' ', truncated_link, parent)  # (1)
 
         if not parent:
-            if dirname != "": 
+            if dirname != "":
                 resolved_path = '/'.join([dirname, link])
-            else: 
+            else:
                 resolved_path = link
             if not os.path.exists(resolved_path):
                 broken_links += [link]
@@ -114,24 +119,17 @@ def get_broken_links(path: str):
                 broken_links += [link]
     return broken_links
 
-def scan_directory(path: str):
+
+def scan_directory(path: str, depth: int = -1):
     """Scans a directory for pages that contain broken links.
-    
+
     Positional args:
         path <str>: A path to the HTML page. 
+        depth <int>: The depth to scan the directory {poorly worded.}
 
-    TODO: The funcion relies on get_paths(); Upd the function so that it knows how depth
+    TODO: The funcion relies on get_paths(); Update the function so that it knows how depth
     to traverse. {Actually, is the `depth` parameter even necessary in that function?} 
     """
-    paths = get_paths(path,)
-
-if __name__ == "__main__":
-    root = pathlib.Path(".")
-
-    depth = 1
-    if len(sys.argv) > 1:
-        depth = int(sys.argv[1])
-
     # Get the HTML files
     files = get_paths(root, depth=depth)
 
@@ -141,5 +139,16 @@ if __name__ == "__main__":
     # Get the broken links in the file
     broken_links = dict()
     for file in html_files:
-        broken_links[file] = get_broken_links(file)
+        broken = get_broken_links(file)
+        if broken: 
+            broken_links[file] = get_broken_links(file)
+    return broken_links
+
+if __name__ == "__main__":
+    root = pathlib.Path(".")
+
+    depth = -1
+    if len(sys.argv) > 1:
+        depth = int(sys.argv[1])
+    broken_links = scan_directory(root, depth=depth)
     pprint(broken_links)
