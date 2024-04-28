@@ -3,6 +3,7 @@
 This module provides functions for managing links on my website.
 
 *Motivation*
+
 I'm in the early stages of writing my blog in pure HTML and CSS. So, naturally, I'm
 constantly restructuring the filesystem, and constantly renaming pages and assets. As
 a result, I have to manually update links and references to assets. This process gets
